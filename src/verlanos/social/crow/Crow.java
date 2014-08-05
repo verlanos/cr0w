@@ -15,7 +15,8 @@ public class Crow {
        System.out.println("############################################");
        System.out.println("# Welcome to cr0w - The CLI Social Network #");
        System.out.println("############################################");
-       CommandInterpreter.getInstance().printHelp();
+        System.out.println();
+        CommandInterpreter.getInstance().printHelp();
 
        Scanner kb_reader = new Scanner(System.in);
 
