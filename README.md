@@ -10,9 +10,9 @@ System Requirements:
   
 Commands:
 
-[username] --- Print username's timeline
-[username] wall --- Print [username]'s wall
-[username] -> [message] --- Post [message] to [username]'s timeline
-[username] follows [other_username] --- Subscribe [username] to [other_username]'s timeline
+*[username] --- Print username's timeline
+*[username] wall --- Print [username]'s wall
+*[username] -> [message] --- Post [message] to [username]'s timeline
+*[username] follows [other_username] --- Subscribe [username] to [other_username]'s timeline
 
 
