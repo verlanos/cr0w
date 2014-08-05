@@ -1,13 +1,9 @@
-package verlanos.social.crow.tests;
-
 import org.junit.Test;
 import verlanos.social.crow.Database;
 import verlanos.social.crow.User;
 
-import java.io.IOException;
-import java.util.Collection;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * This class serves as an Aggregator. It's purpose is to merge and display Timeline event data from
@@ -23,9 +19,12 @@ public class Database_Test {
     String[] messages = {"Such a nice day!","27489298 some rubbish", "\\4539djns9sjs!@#$&*$()(#?><"};
     String[] reversed_messages = {"\\4539djns9sjs!@#$&*$()(#?><","27489298 some rubbish","Such a nice day!"};
 
+    final String TEST_DB_PATH = "test";
+    final String TEST_DB_NAME = "test_db";
+
     @Test
     public void testUsersInserts(){
-        Database.getInstance().open(Database.DBPATH,Database.DBNAME);
+        Database.getInstance().open(TEST_DB_PATH, TEST_DB_NAME);
         cleanup();
         for(int i = 0; i<testUsers.length; i++){
             testUserInsert(testUsers[i],messages[i]);
@@ -35,7 +34,7 @@ public class Database_Test {
 
     @Test
     public void testDuplicateUserInserts(){
-        Database.getInstance().open(Database.DBPATH,Database.DBNAME);
+        Database.getInstance().open(TEST_DB_PATH, TEST_DB_NAME);
         cleanup();
         for(int i = 0; i<testUsers.length; i++){
             testUserInsert(testUsers[i],reversed_messages[i]);
@@ -65,6 +64,6 @@ public class Database_Test {
     }
 
     private void cleanup(){
-        Database.getInstance().deleteDB(Database.DBNAME);
+        Database.getInstance().deleteDB(TEST_DB_NAME);
     }
 }
